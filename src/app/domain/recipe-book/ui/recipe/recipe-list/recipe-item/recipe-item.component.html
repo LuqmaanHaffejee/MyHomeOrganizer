@@ -1,1 +1,11 @@
-<p>recipe-item works!</p>
+<div class="card">
+  <div class="row p-3">
+    <div class="col-5">
+      <img class="rounded img-thumbnail" [src]="recipe.imagePath" alt="" style="max-width: 130px; max-height: 130px">
+    </div>
+    <div class="col-7">
+      <h4 class="text-lg-start">{{ recipe.name }}</h4>
+      <p class="text-md-start">{{ recipe.description }}</p>
+    </div>
+  </div>
+</div>
