@@ -8,9 +8,9 @@ import { Ingredient } from "../../../../shared/model/ingredient";
 })
 export class ShoppingListComponent {
 
-  ingredients: Ingredient[] = [
-    {name: 'Apples', amount: 5},
-    {name: 'Tomatoes', amount: 10},
-  ];
+  ingredients: Ingredient[] = [];
 
+  onIngredientAdded(newIngredient: Ingredient) {
+    this.ingredients.push(newIngredient);
+  }
 }
