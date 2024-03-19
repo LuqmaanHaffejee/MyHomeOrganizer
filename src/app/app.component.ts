@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  recipePageSelected: boolean = true;
+  recipePageSelected: boolean;
 
-  shoppingListPageSelected: boolean = false;
+  shoppingListPageSelected: boolean;
 
   onRecipePageSelected() {
     this.shoppingListPageSelected = false;
