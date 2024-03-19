@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Recipe } from "../../model/recipe";
 
 @Component({
   selector: 'app-recipe',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class RecipeComponent {
 
+  selectedRecipe: Recipe;
+
+  onRecipeSelected($event: Recipe) {
+    this.selectedRecipe = $event;
+  }
 }
