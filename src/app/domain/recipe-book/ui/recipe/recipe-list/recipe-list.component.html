@@ -5,6 +5,6 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-      <app-recipe-item *ngFor="let recipe of recipes" [recipe]="recipe" (click)="onRecipeClick(recipe)"></app-recipe-item>
+      <app-recipe-item *ngFor="let recipe of recipes; index as i" [recipe]="recipe" (click)="onRecipeClick(i)"></app-recipe-item>
   </div>
 </div>

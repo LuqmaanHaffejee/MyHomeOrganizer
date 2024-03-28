@@ -1,16 +1,12 @@
 import { Component } from '@angular/core';
-import { Recipe } from "../../model/recipe";
+import { RecipeService } from "../../services/recipe.service";
 
 @Component({
   selector: 'app-recipe',
   templateUrl: './recipe.component.html',
-  styleUrl: './recipe.component.css'
+  styleUrl: './recipe.component.css',
+  providers: [RecipeService]
 })
 export class RecipeComponent {
 
-  selectedRecipe: Recipe;
-
-  onRecipeSelected($event: Recipe) {
-    this.selectedRecipe = $event;
-  }
 }
