@@ -1,5 +1,6 @@
 import { Component, ElementRef, inject, ViewChild } from "@angular/core";
 import { ShoppingListService } from "../../../services/shopping-list.service";
+import { Ingredient } from "../../../../../shared/model/ingredient";
 
 @Component({
   selector: 'app-shopping-list-edit',
@@ -19,6 +20,6 @@ export class ShoppingListEditComponent {
   onAddIngredient() {
     const name: string = this.nameInput.nativeElement.value;
     const amount: number = this.amountInput.nativeElement.value;
-    this.shoppingListService.addIngredient(name, amount);
+    this.shoppingListService.addIngredient(new Ingredient(name, amount));
   }
 }

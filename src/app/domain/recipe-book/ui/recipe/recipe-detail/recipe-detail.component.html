@@ -11,24 +11,27 @@
   </div>
   <div class="row">
     <div class="col-12">
+      {{ recipe.description }}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
       <div class="dropdown" appDropdown>
         <button class="btn btn-primary dropdown-toggle">Manage recipe</button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item">To Shopping List</a></li>
-          <li><a class="dropdown-item">Edit Recipe</a></li>
-          <li><a class="dropdown-item">Delete Recipe</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer" (click)="onAddToShoppingList()">To Shopping List</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer">Edit Recipe</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer">Delete Recipe</a></li>
         </ul>
       </div>
     </div>
   </div>
+  <br>
   <div class="row">
-    <div class="col-12">
-      {{ recipe.description }}
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      Ingredients
+    <h3>Ingredients</h3>
+    <div class="card col-12" *ngFor="let ingredient of recipe.ingredients">
+      {{ ingredient.amount }} x {{ ingredient.name }}
     </div>
   </div>
 </div>
