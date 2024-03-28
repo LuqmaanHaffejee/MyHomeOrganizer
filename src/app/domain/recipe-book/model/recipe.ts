@@ -1,3 +1,5 @@
+import { Ingredient } from "../../../shared/model/ingredient";
+
 export class Recipe {
   name: string;
 
@@ -5,10 +7,13 @@ export class Recipe {
 
   imagePath: string;
 
-  constructor(name: string, description: string, imagePath: string) {
+  ingredients: Ingredient[] = [];
+
+  constructor(name: string, description: string, imagePath: string, ingredients: Ingredient[]) {
     this.name = name;
     this.description = description;
     this.imagePath = imagePath;
+    this.ingredients = ingredients.slice();
   }
 
 }
