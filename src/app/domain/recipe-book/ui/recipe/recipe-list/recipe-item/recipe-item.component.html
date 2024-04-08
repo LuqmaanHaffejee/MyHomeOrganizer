@@ -1,10 +1,11 @@
-<div class="card" style="cursor: pointer">
+<div class="card" style="cursor: pointer"
+     routerLinkActive="bg-opacity-10 bg-primary">
   <div class="row p-3">
     <div class="col-5">
       <img class="rounded img-thumbnail" [src]="recipe.imagePath" alt="" style="max-width: 130px; max-height: 130px">
     </div>
     <div class="col-7">
-      <h4 class="text-lg-start">{{ recipe.name }}</h4>
+      <h3 class="text-lg-start">{{ recipe.name }}</h3>
       <p class="text-md-start">{{ recipe.description }}</p>
     </div>
   </div>

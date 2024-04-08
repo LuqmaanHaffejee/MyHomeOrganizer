@@ -6,19 +6,4 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-
-  recipePageSelected: boolean;
-
-  shoppingListPageSelected: boolean;
-
-  onRecipePageSelected() {
-    this.shoppingListPageSelected = false;
-    this.recipePageSelected = true;
-  }
-
-  onShoppingListPageSelected() {
-    this.recipePageSelected = false;
-    this.shoppingListPageSelected = true;
-  }
-
 }
