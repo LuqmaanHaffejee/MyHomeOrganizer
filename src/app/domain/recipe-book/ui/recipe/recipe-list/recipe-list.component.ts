@@ -1,6 +1,6 @@
-import { Component, EventEmitter, inject, Output } from "@angular/core";
-import { Recipe } from "../../../model/recipe";
+import { Component, inject } from "@angular/core";
 import { RecipeService } from "../../../services/recipe.service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-recipe-list',
@@ -13,8 +13,7 @@ export class RecipeListComponent {
 
   recipes = this.recipeService.getRecipes();
 
-  onRecipeClick(id: number) {
-    this.recipeService.setSelectedRecipe(id);
-  }
+  route = inject(ActivatedRoute);
+
 }
 

@@ -1,14 +1,14 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
-      <li class="nav-item"><a class="nav-link active" href="#">My Home Organizer</a></li>
-      <li class="nav-item"><a class="nav-link" href="#" (click)="onRecipeClick()">Recipe Book</a></li>
-      <li class="nav-item"><a class="nav-link" href="#" (click)="onShoppingListClick()">Shopping List</a></li>
+      <li class="nav-item"><a class="nav-link" routerLinkActive="active">My Home Organizer</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/recipes" routerLinkActive="active">Recipe Book</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/shopping-list" routerLinkActive="active">Shopping List</a></li>
       <li class="nav-item dropdown" appDropdown>
-        <a class="nav-link dropdown-toggle" href="#" role="button">Actions</a>
+        <a class="nav-link dropdown-toggle" role="button">Actions</a>
         <ul class="dropdown-menu">
-          <li><a href="#" class="dropdown-item">Fetch</a></li>
-          <li><a href="#" class="dropdown-item">Save</a></li>
+          <li><a class="dropdown-item">Fetch</a></li>
+          <li><a class="dropdown-item">Save</a></li>
         </ul>
       </li>
     </ul>

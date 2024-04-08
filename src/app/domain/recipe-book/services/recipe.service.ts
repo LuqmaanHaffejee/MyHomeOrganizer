@@ -1,10 +1,10 @@
 import { Recipe } from "../model/recipe";
-import { EventEmitter } from "@angular/core";
 
 export class RecipeService {
 
   private recipes: Recipe[] = [
     {
+      id: 0,
       name: 'Cake',
       description: 'Chocolate Flavour',
       imagePath: 'https://soetcakes.co.za/cdn/shop/products/IMG_3309_5000x.jpg?v=1669139664',
@@ -15,6 +15,7 @@ export class RecipeService {
       ]
     },
     {
+      id: 1,
       name: 'Creamy chicken',
       description: '',
       imagePath: 'https://images.immediate.co.uk/production/volatile/sites/30/2022/04/Air-Fryer-Chicken-Thighs-d4575b2.jpg',
@@ -26,14 +27,12 @@ export class RecipeService {
     }
   ];
 
-  recipeSelected = new EventEmitter<Recipe>();
-
-  getRecipes() {
+  getRecipes(): Recipe[] {
     return this.recipes.slice();
   }
 
-  setSelectedRecipe(id: number) {
-    this.recipeSelected.emit(this.recipes[id]);
+  getRecipe(id: number): Recipe {
+    return this.recipes.filter(recipe => recipe.id === id)[0];
   }
 
 }

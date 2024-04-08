@@ -1,17 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="col-12">
-      <img class="img-fluid img-thumbnail" style="max-height: 300px; max-width: 300px" [src]="recipe.imagePath" alt="">
+    <div class="col-4">
+      <img class="img-fluid img-thumbnail" style="max-height: 200px; max-width: 200px" [src]="recipe.imagePath" alt="">
     </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <h1>{{ recipe.name }}</h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      {{ recipe.description }}
+    <div class="col-8">
+      <div class="col-12">
+        <h1>{{ recipe.name }}</h1>
+        {{ recipe.description }}
+      </div>
     </div>
   </div>
 
@@ -21,7 +17,7 @@
         <button class="btn btn-primary dropdown-toggle">Manage recipe</button>
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" style="cursor: pointer" (click)="onAddToShoppingList()">To Shopping List</a></li>
-          <li><a class="dropdown-item" style="cursor: pointer">Edit Recipe</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer" (click)="onEditRecipe()">Edit Recipe</a></li>
           <li><a class="dropdown-item" style="cursor: pointer">Delete Recipe</a></li>
         </ul>
       </div>
