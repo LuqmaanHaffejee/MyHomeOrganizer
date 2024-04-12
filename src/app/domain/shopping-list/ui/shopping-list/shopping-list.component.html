@@ -3,10 +3,14 @@
   <hr>
   <div class="row">
     <div class="col-12">
-      <app-shopping-list-edit />
+      <app-shopping-list-edit/>
       <hr>
       <ul class="list-group">
-        <a class="list-group-item" style="cursor: pointer" *ngFor="let ingredient of ingredients">
+        <a class="list-group-item"
+           style="cursor: pointer"
+           *ngFor="let ingredient of ingredients"
+           (click)="onIngredientSelected(ingredient.id)"
+        >
           {{ ingredient.amount + ' x ' + ingredient.name }}
         </a>
       </ul>
