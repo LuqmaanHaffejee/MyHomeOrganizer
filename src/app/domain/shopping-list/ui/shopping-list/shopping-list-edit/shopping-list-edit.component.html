@@ -1,21 +1,25 @@
 <div class="row">
   <div class="col-12">
-    <form #formRef="ngForm">
+    <form #formRef="ngForm" (ngSubmit)="onSubmit()">
       <div class="row mb-2">
+        <input name="id" [hidden]="true" ngModel>
         <div class="col-5 form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" class="form-control" ngModel>
+          <input type="text" id="name" name="name" class="form-control" ngModel required />
+          <p *ngIf="formRef.form.get('name').touched && formRef.form.get('name').hasError('required')">Required</p>
         </div>
         <div class="col-2">
           <label for="amount">Amount</label>
-          <input type="number" id="amount" name="amount" class="form-control" ngModel>
+          <input type="number" id="amount" name="amount" class="form-control" ngModel required min="1" />
+          <p *ngIf="formRef.form.get('amount').touched && formRef.form.get('amount').hasError('required')">Required</p>
+          <p *ngIf="formRef.form.get('amount').touched && formRef.form.get('amount').hasError('min')">Minimum of 1</p>
         </div>
       </div>
       <div class="row">
         <div class="col-12">
-          <button class="btn btn-success" type="submit" (click)="onAddIngredient()">Add</button>
-          <button class="btn btn-danger m-2" type="button">Delete</button>
-          <button class="btn btn-secondary" type="button">Clear</button>
+          <button class="btn btn-success" type="submit" [disabled]="!formRef.valid" [innerText]="editMode ? 'Update': 'Add'"></button>
+          <button class="btn btn-danger m-2" type="button" [disabled]="!editMode" (click)="onDelete()">Delete</button>
+          <button class="btn btn-secondary" type="button" (click)="onClear()">Clear</button>
         </div>
       </div>
     </form>

@@ -1,5 +1,5 @@
 import { Ingredient } from "../../../shared/model/ingredient";
-import { Subject } from "rxjs";
+import { map, Subject } from "rxjs";
 
 export class ShoppingListService {
 
@@ -7,17 +7,38 @@ export class ShoppingListService {
 
   ingredientAddedSubject = new Subject<Ingredient[]>();
 
+  selectedIngredientIdSubject = new Subject<number>();
+
+  selectedIngredient$ = this.selectedIngredientIdSubject.asObservable().pipe(
+    map(id => this.ingredients.filter(ing => ing.id === id)[0])
+  );
+
   getIngredients() {
     return this.ingredients.slice();
   }
 
-  addIngredient(ingredient: Ingredient) {
-    this.ingredients.push(ingredient);
+  addIngredient(name: string, amount: number) {
+    let maxID = -1;
+    if (this.ingredients.length > 0)
+      maxID = this.ingredients.map(i => i.id).sort((a, b) => b - a)[0];
+    this.ingredients.push(new Ingredient(maxID + 1, name, amount));
     this.ingredientAddedSubject.next(this.ingredients.slice());
   }
 
   addIngredients(ingredients: Ingredient[]) {
-    this.ingredients.push(...ingredients);
+    ingredients.forEach(ingredient => this.addIngredient(ingredient.name, ingredient.amount));
+  }
+
+  updateIngredient(id: number, name: string, amount: number) {
+    const ingredient = this.ingredients.filter(ing => ing.id === id)[0];
+    ingredient.name = name;
+    ingredient.amount = amount;
+    this.ingredientAddedSubject.next(this.ingredients.slice());
+  }
+
+  deleteIngredient(id: number) {
+    const index = this.ingredients.findIndex(i => i.id === id);
+    this.ingredients.splice(index, 1);
     this.ingredientAddedSubject.next(this.ingredients.slice());
   }
 }

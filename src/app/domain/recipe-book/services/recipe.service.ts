@@ -9,9 +9,9 @@ export class RecipeService {
       description: 'Chocolate Flavour',
       imagePath: 'https://soetcakes.co.za/cdn/shop/products/IMG_3309_5000x.jpg?v=1669139664',
       ingredients: [
-        {name: 'Flour', amount: 2},
-        {name: 'Cocoa Powder', amount: 1},
-        {name: 'Butter', amount: 1},
+        {id: 0, name: 'Flour', amount: 2},
+        {id: 1, name: 'Cocoa Powder', amount: 1},
+        {id: 2, name: 'Butter', amount: 1},
       ]
     },
     {
@@ -20,9 +20,9 @@ export class RecipeService {
       description: '',
       imagePath: 'https://images.immediate.co.uk/production/volatile/sites/30/2022/04/Air-Fryer-Chicken-Thighs-d4575b2.jpg',
       ingredients: [
-        {name: 'Chicken', amount: 2},
-        {name: 'Sour Cream', amount: 1},
-        {name: 'Sauce', amount: 5},
+        {id: 3, name: 'Chicken', amount: 2},
+        {id: 4, name: 'Sour Cream', amount: 1},
+        {id: 5, name: 'Sauce', amount: 5},
       ]
     }
   ];
