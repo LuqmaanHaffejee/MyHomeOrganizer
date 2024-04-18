@@ -1,4 +1,6 @@
 <div class="container">
+  <h2 class="w-100 text-center">{{ editMode ? recipe.name : 'New Recipe' }}</h2>
+  <hr>
   <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
     <h5>Details</h5>
     <div class="form-group">
