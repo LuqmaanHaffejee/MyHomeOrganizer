@@ -2,7 +2,9 @@ import { Ingredient } from "../../../shared/model/ingredient";
 
 export class Recipe {
 
-  id: number;
+  private static maxId: number = 0;
+
+  id: number = ++Recipe.maxId;
 
   name: string;
 
@@ -12,8 +14,7 @@ export class Recipe {
 
   ingredients: Ingredient[] = [];
 
-  constructor(id: number, name: string, description: string, imagePath: string, ingredients: Ingredient[]) {
-    this.id = id;
+  constructor(name: string, description: string, imagePath: string, ingredients: Ingredient[]) {
     this.name = name;
     this.description = description;
     this.imagePath = imagePath;

@@ -5,9 +5,9 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-      <app-recipe-item *ngFor="let recipe of recipes; index as i"
+      <app-recipe-item *ngFor="let recipe of (recipes$ | async); index as i"
                        [recipe]="recipe"
-                       [routerLink]="[recipe.id, 'details']"
+                       [routerLink]="[recipe.id]"
                        [relativeTo]="route"
       >
       </app-recipe-item>
