@@ -18,10 +18,7 @@ export class ShoppingListService {
   }
 
   addIngredient(name: string, amount: number) {
-    let maxID = -1;
-    if (this.ingredients.length > 0)
-      maxID = this.ingredients.map(i => i.id).sort((a, b) => b - a)[0];
-    this.ingredients.push(new Ingredient(maxID + 1, name, amount));
+    this.ingredients.push(new Ingredient(name, amount));
     this.ingredientAddedSubject.next(this.ingredients.slice());
   }
 

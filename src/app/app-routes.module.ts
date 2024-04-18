@@ -13,7 +13,7 @@ export const routes: Routes = [
     children: [
       {path: '', component: RecipeStartComponent},
       {path: 'new', component: RecipeEditComponent, data: {editMode: false}},
-      {path: ':id/details', component: RecipeDetailComponent},
+      {path: ':id', component: RecipeDetailComponent},
       {path: ':id/edit', component: RecipeEditComponent, data: {editMode: true}},
     ]
   },

@@ -11,7 +11,7 @@ export class RecipeListComponent {
 
   recipeService = inject(RecipeService);
 
-  recipes = this.recipeService.getRecipes();
+  recipes$ = this.recipeService.recipes$;
 
   route = inject(ActivatedRoute);
 
